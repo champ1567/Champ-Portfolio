@@ -72,4 +72,4 @@ export const projects = [
     },
     tags: ['React', 'API', 'CSS'],
   },
-]
+];
