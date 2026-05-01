@@ -1,16 +1,20 @@
-import './App.css';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
-function App() {
-  const a = 'dasda';
-  console.log(a);
-
+export default function App() {
   return (
-    <>
-      <div>
-        <h1 class="text-3xl font-bold underline">Hello world!</h1>
-      </div>
-    </>
+    <ThemeProvider>
+      <LanguageProvider>
+        <div
+          className="min-h-screen bg-white dark:bg-gray-900 
+                        transition-colors duration-300"
+        >
+          <Navbar />
+          <Hero />
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
-
-export default App;
