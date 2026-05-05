@@ -1,0 +1,37 @@
+@layer components {
+  /* navbar */
+  .nav-main {
+    /* Position & Size */
+    @apply fixed inset-x-0 top-0 z-100 h-17;
+
+    /* Flexbox */
+    @apply flex items-center justify-between px-[5%];
+
+    /* Look & Feel */
+    @apply border-b border-border bg-bg/85 backdrop-blur-md;
+
+    /* Animation */
+    @apply transition-colors duration-400;
+  }
+
+  .nav-logo {
+    /* Layout & Reset */
+    @apply cursor-pointer border-none bg-transparent;
+
+    /* Typography (ดึง font-heading จาก theme มาใช้ได้เลย) */
+    @apply font-heading font-extrabold text-2xl tracking-[-1px];
+
+    /* Gradient Text (ใช้ utility ที่เราสร้างไว้) */
+    @apply text-brand-gradient;
+
+    /* บังคับสีข้อความให้โปร่งใสเพื่อโชว์ Gradient */
+    @apply text-transparent;
+
+    /* เพิ่ม Interactive (Hover/Active) */
+    @apply transition-all duration-300;
+    /* เพิ่มความสว่างเล็กน้อยเวลาชี้ */
+    @apply hover:opacity-80 hover:scale-105 hover:brightness-110;
+    /* เอฟเฟกต์เหมือนปุ่มถูกกด */
+    @apply active:scale-95;
+  }
+}

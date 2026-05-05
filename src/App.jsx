@@ -7,10 +7,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div
-          className="min-h-screen bg-white dark:bg-gray-900 
-                        transition-colors duration-300 ease-in-out"
-        >
+        <div className="min-h-screen">
           <Navbar />
           <Hero />
         </div>

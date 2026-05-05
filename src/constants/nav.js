@@ -1,5 +1,5 @@
 /** @type {Array<{ id: string; key: string }>} */
-export const NAV_ITEMS = [
+export const navItems = [
   { id: 'hero', key: 'home' },
   { id: 'about', key: 'about' },
   { id: 'projects', key: 'projects' },
