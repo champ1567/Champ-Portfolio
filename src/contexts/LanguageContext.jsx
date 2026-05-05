@@ -1,8 +1,7 @@
 import { createContext, useState, useContext } from 'react';
 import { translations, projects } from '../data/index.js';
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const LanguageContext = createContext();
+const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('th');

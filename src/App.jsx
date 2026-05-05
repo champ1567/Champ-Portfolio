@@ -9,7 +9,7 @@ export default function App() {
       <LanguageProvider>
         <div
           className="min-h-screen bg-white dark:bg-gray-900 
-                        transition-colors duration-300"
+                        transition-colors duration-300 ease-in-out"
         >
           <Navbar />
           <Hero />

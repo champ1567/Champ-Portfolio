@@ -1,7 +1,6 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const ThemeContext = createContext();
+const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [isDark, setIsDark] = useState(false);
