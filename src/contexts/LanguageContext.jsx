@@ -8,7 +8,7 @@ export function LanguageProvider({ children }) {
 
   const toggleLang = () => setLang(lang === 'th' ? 'en' : 'th');
 
-  const t = translations[lang];
+  const t = translations[lang] || translations['th'];
   const localizedProjects = projects.map((project) => ({
     ...project,
     description: project.desc[lang],

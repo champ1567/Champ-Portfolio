@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+/* ─────────────────────────────────────────────
+   THEME TOKENS  (Tailwind v4 @theme)
+───────────────────────────────────────────── */
+@theme {
+  --font-body: 'Sarabun', sans-serif;
+  --font-heading: 'Noto Sans Thai', sans-serif;
+
+  /* Light palette */
+  --color-bg: #f8f7f4;
+  --color-bg2: #ffffff;
+  --color-text: #1a1a2e;
+  --color-muted: #4a4a6a;
+  --color-accent: #4f6ef7;
+  --color-accent2: #7c3aed;
+  --color-border: #e8e6f0;
+  --color-card: #ffffff;
+}
+
+/* ─────────────────────────────────────────────
+   DARK MODE OVERRIDES
+───────────────────────────────────────────── */
+.dark {
+  --color-bg: #0d0d14;
+  --color-bg2: #13131f;
+  --color-text: #f0eeff;
+  --color-muted: #9090b0;
+  --color-accent: #6b8fff;
+  --color-accent2: #a78bfa;
+  --color-border: #1e1e30;
+  --color-card: #16161f;
+}
+
+/* ─────────────────────────────────────────────
+   BASE RESET & GLOBALS
+───────────────────────────────────────────── */
+/* prettier-ignore */
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* prettier-ignore */
+h1,h2,h3,h4 {
+  font-family: var(--font-heading);
+}
+
+/* ─────────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
+/* Navbar */
+@utility nav-logo {
+  /* 1. Layout & Box Model: กำหนดรูปทรงและตำแหน่งก่อน */
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  /* 2. Typography: กำหนดลักษณะตัวอักษร */
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1; /* เพิ่มเพื่อให้พื้นที่ของปุ่มกระชับพอดีกับตัวอักษร */
+
+  /* 3. Color & Gradient: จัดกลุ่มเรื่องสีไว้ด้วยกัน */
+  color: transparent;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent2) 50%,
+    var(--color-accent) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* 4. Effects & Transitions: ตกแต่งมิติและการเคลื่อนไหว */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ควรระบุ transition ให้ชัดเจน */
+
+  /* 5. State Handling: ส่วนของการตอบสนอง */
+  &:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1)) brightness(1.1);
+    background-position: right center;
+  }
+}
+
+@utility nav-link {
+  @apply relative pb-0.75;
+
+  &::after {
+    @apply bg-accent absolute bottom-0 left-0 h-0.5 w-0 rounded-xs transition-[width] duration-300 ease-in-out;
+    content: '';
+  }
+
+  &:hover::after {
+    @apply w-full;
+  }
+}
+
+@utility btn-outline {
+  /* Layout & Shape */
+  @apply cursor-pointer rounded-xl border-[1.5px] bg-transparent;
+
+  /* Typography & Color */
+  @apply font-body text-text border-border font-semibold;
+
+  /* Animation */
+  @apply transition-colors duration-200;
+
+  /* Hover */
+  &:hover {
+    @apply border-accent text-accent;
+  }
+}
+
+/* Hamburger bar */
+@utility ham-bar {
+  @apply block h-0.5 w-5.5 rounded-xs;
+  @apply bg-text;
+  @apply transition-all duration-300 ease-out;
+}

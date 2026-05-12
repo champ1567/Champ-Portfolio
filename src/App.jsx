@@ -1,7 +1,7 @@
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Navbar from './components/layout/Navbar';
+// import Hero from './components/Hero';
 
 export default function App() {
   return (
@@ -9,7 +9,6 @@ export default function App() {
       <LanguageProvider>
         <div className="min-h-screen">
           <Navbar />
-          <Hero />
         </div>
       </LanguageProvider>
     </ThemeProvider>
