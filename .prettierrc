@@ -9,5 +9,5 @@
   "endOfLine": "lf",
   "plugins": ["prettier-plugin-tailwindcss"],
   "tailwindAttributes": ["className"],
-  "tailwindFunctions": ["clsx", "twMerge", "cn"]
+  "tailwindFunctions": ["clsx"]
 }

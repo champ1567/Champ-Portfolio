@@ -3,7 +3,6 @@ import { navItems } from '../../constants/nav.js';
 import { scrollTo, cx } from '../../lib/utils.js';
 import { useLang } from '../../contexts/LanguageContext.jsx';
 import { useTheme } from '../../contexts/ThemeContext.jsx';
-import { cn } from '../../lib/utils.js';
 
 export default function Navbar() {
   const { t, lang, setLang } = useLang();
@@ -47,19 +46,12 @@ export default function Navbar() {
   return (
     <>
       {/* ── Desktop nav ── */}
-      <nav
-        className={cn(
-          'fixed inset-x-0 top-0 z-100', // กลุ่ม Position
-          'flex h-17 items-center justify-between', // กลุ่ม Layout & Size
-          'border-border border-b px-[5%]', // กลุ่ม Spacing & Border
-          'bg-bg/85 backdrop-blur-md', // กลุ่ม Colors & Effect (v4 style)
-          'transition-colors duration-400' // กลุ่ม Animation
-        )}
-      >
+      // Base styles from @utility
+      <nav className="nav-container">
         {/* Logo */}
         <button
           onClick={() => handleNav('hero')}
-          className="nav-logo"
+          className="nav-logo" // Base styles from @utility
           aria-label="Back to top"
         >
           CHAMP.
@@ -72,10 +64,8 @@ export default function Navbar() {
               <button
                 onClick={() => handleNav(id)}
                 className={cx(
-                  'nav-link cursor-pointer border-none bg-transparent', //  Layout & Shape
-                  'font-body text-sm font-medium', //  Typography
-                  activeSection === id ? 'text-accent' : 'text-muted', //  States & Colors
-                  'transition-colors duration-300' //  Effects & Transitions
+                  'nav-link', // Base styles from @utility
+                  activeSection === id ? 'text-accent' : 'text-content' //  States & Colors
                 )}
               >
                 {t.nav[key]}
@@ -110,7 +100,7 @@ export default function Navbar() {
           >
             <span
               className={cx(
-                'ham-bar',
+                'ham-bar', // Base styles from @utility
                 menuOpen && 'transform-[translateY(7px)_rotate(45deg)]'
               )}
             />
@@ -124,21 +114,17 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
       {/* ── Mobile menu ── */}
       {menuOpen && (
-        <div className="fixed top-[68px] right-0 left-0 z-[99] border-b border-[var(--color-border)] bg-[color-mix(in_srgb,var(--color-bg)_85%,transparent)] px-[5%] py-[1.2rem] backdrop-blur-[14px] md:hidden">
-          {navItems.map(({ id, key }, i) => (
+        // Base styles from @utility
+        <div className="mobile-nav-container">
+          {navItems.map(({ id, key }) => (
             <button
               key={id}
               onClick={() => handleNav(id)}
               className={cx(
-                'block w-full py-[0.9rem] text-left text-[var(--color-text2)]',
-                'cursor-pointer border-none bg-transparent text-base font-medium',
-                'font-[var(--font-body)] transition-[color,padding-left] duration-200',
-                'hover:pl-2 hover:text-[var(--color-accent)]',
-                i < navItems.length - 1 &&
-                  'border-b border-[var(--color-border)]'
+                'mobile-nav-item', // Base styles from @utility
+                activeSection === id ? 'text-accent' : 'text-content' // States & Colors
               )}
             >
               {t.nav[key]}

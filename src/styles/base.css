@@ -1,0 +1,77 @@
+/* ─────────────────────────────────────────────
+   THEME TOKENS  (Tailwind v4 @theme)
+───────────────────────────────────────────── */
+@theme {
+  --font-body: 'Sarabun', sans-serif;
+  --font-heading: 'Noto Sans Thai', sans-serif;
+
+  /* Light palette */
+  --color-bg: #f8f7f4;
+  --color-bg2: #ffffff;
+  --color-text: #1a1a2e;
+  --color-content: #4a4a6a;
+  --color-accent: #4f6ef7;
+  --color-accent2: #7c3aed;
+  --color-border: #e8e6f0;
+  --color-card: #ffffff;
+}
+
+/* ─────────────────────────────────────────────
+   DARK MODE OVERRIDES
+───────────────────────────────────────────── */
+.dark {
+  --color-bg: #0d0d14;
+  --color-bg2: #13131f;
+  --color-text: #f0eeff;
+  --color-content: #9090b0;
+  --color-accent: #6b8fff;
+  --color-accent2: #a78bfa;
+  --color-border: #1e1e30;
+  --color-card: #16161f;
+}
+
+/* ─────────────────────────────────────────────
+   BASE RESET & GLOBALS
+───────────────────────────────────────────── */
+/* prettier-ignore */
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* prettier-ignore */
+h1,h2,h3,h4 {
+  font-family: var(--font-heading);
+}
+
+/* ─────────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
+@utility transition-smooth {
+  @apply transition-colors duration-400 ease-in-out;
+}
