@@ -5,7 +5,7 @@ import { useLang } from '../../contexts/LanguageContext.jsx';
 import { useTheme } from '../../contexts/ThemeContext.jsx';
 
 export default function Navbar() {
-  const { t, lang, setLang } = useLang();
+  const { t, lang, toggleLang } = useLang();
   const { isDark: dark, toggleTheme: setDark } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActive] = useState('hero');
@@ -77,10 +77,7 @@ export default function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2">
           {/* Lang toggle */}
-          <button
-            onClick={() => setLang(lang === 'th' ? 'en' : 'th')}
-            className={btnBaseClass}
-          >
+          <button onClick={toggleLang} className={btnBaseClass}>
             {lang === 'th' ? 'EN' : 'TH'}
           </button>
 
