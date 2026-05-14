@@ -10,6 +10,8 @@ export const translations = {
     hero: {
       tag: '🚀 พร้อมรับงานใหม่',
       greeting: 'สวัสดี ฉันคือ',
+      nName: 'แชมป์',
+      fName: 'สิรดนัย ลือทรัพย์',
       sub: 'Frontend Developer ที่หลงใหลใน React, Tailwind และการสร้าง UI ที่สวยงาม ใช้งานง่าย และมีประสิทธิภาพ',
       btnProjects: 'ดูผลงาน',
       btnContact: 'ติดต่อฉัน',
@@ -67,6 +69,8 @@ export const translations = {
     hero: {
       tag: '🚀 Available for work',
       greeting: "Hi, I'm",
+      nName: 'Champ',
+      fName: 'Siradanai Luesup',
       sub: 'Frontend Developer passionate about React, Tailwind CSS, and crafting beautiful, intuitive, high-performance UIs.',
       btnProjects: 'View Projects',
       btnContact: 'Contact Me',

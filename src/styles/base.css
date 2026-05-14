@@ -9,6 +9,7 @@
   --color-bg: #f8f7f4;
   --color-bg2: #ffffff;
   --color-text: #1a1a2e;
+  --color-inverse: #f0eeff;
   --color-content: #4a4a6a;
   --color-accent: #4f6ef7;
   --color-accent2: #7c3aed;
@@ -23,6 +24,7 @@
   --color-bg: #0d0d14;
   --color-bg2: #13131f;
   --color-text: #f0eeff;
+  --color-inverse: #1a1a2e;
   --color-content: #9090b0;
   --color-accent: #6b8fff;
   --color-accent2: #a78bfa;
@@ -75,4 +77,24 @@ h1,h2,h3,h4 {
 
 @utility transition-smooth {
   @apply transition-colors duration-400 ease-in-out;
+}
+
+@utility btn-gradient {
+  @apply cursor-pointer rounded-xl border-none;
+  @apply font-body text-inverse font-semibold;
+  @apply bg-[linear-gradient(135deg,var(--color-accent),var(--color-accent2))];
+  @apply shadow-[0_6px_20px_color-mix(in_srgb,var(--color-accent)_35%,transparent)];
+  @apply transition-all duration-200;
+  &:hover {
+    @apply -translate-y-0.5 shadow-[0_10px_28px_color-mix(in_srgb,var(--color-accent)_45%,transparent)];
+  }
+}
+
+@utility btn-outline {
+  @apply cursor-pointer rounded-xl border-[1.5px] bg-transparent;
+  @apply font-body text-text border-border font-semibold;
+  @apply transition-colors duration-200;
+  &:hover {
+    @apply border-accent text-accent;
+  }
 }

@@ -5,4 +5,7 @@
 @import './styles/base.css';
 
 /* Component styles */
-@import './styles/components/navbar.css';
+@import './styles/layout/navbar.css';
+
+/* Section styles */
+@import './styles/sections/hero.css';

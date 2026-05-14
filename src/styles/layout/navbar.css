@@ -39,15 +39,6 @@
   }
 }
 
-@utility btn-outline {
-  @apply cursor-pointer rounded-xl border-[1.5px] bg-transparent;
-  @apply font-body text-text border-border font-semibold;
-  @apply transition-colors duration-200;
-  &:hover {
-    @apply border-accent text-accent;
-  }
-}
-
 /* Nav Mobile */
 @utility ham-bar {
   @apply block h-0.5 w-5.5 rounded-xs;
